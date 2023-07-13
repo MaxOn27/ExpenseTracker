@@ -1,0 +1,92 @@
+body {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  width: 100vw;
+  height: 100vh;
+  box-sizing: border-box;
+  margin: 0;
+  padding: 1%;
+  background-color: lightyellow;
+  font-family: "Roboto", sans-serif; }
+
+header {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: flex-start;
+  height: 100%;
+  width: 20%;
+  background-color: white;
+  padding: 0;
+  border-radius: 5px;
+  -webkit-box-shadow: 1px 1px 9px 5px rgba(0, 0, 0, 0.5);
+  box-shadow: 1px 1px 9px 5px rgba(0, 0, 0, 0.5); }
+  header .app_name {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    width: 100%; }
+    header .app_name h3 {
+      text-align: center;
+      width: 80%;
+      border: 1px solid pink;
+      padding: 10px;
+      color: pink; }
+  header .user_main_info {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    margin: 15px 0; }
+    header .user_main_info i {
+      font-size: 30px;
+      color: dodgerblue; }
+    header .user_main_info .user_name {
+      color: darkgray; }
+  header .navigation {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    width: 100%; }
+    header .navigation nav {
+      display: flex;
+      flex-direction: column;
+      align-items: normal;
+      justify-content: normal;
+      width: 100%; }
+      header .navigation nav .nav_item {
+        color: darkgray;
+        margin: 10px;
+        text-decoration: none;
+        padding: 7%;
+        z-index: 1;
+        text-transform: uppercase;
+        letter-spacing: .2px;
+        font-weight: 500; }
+        header .navigation nav .nav_item:hover {
+          background-color: pink;
+          border-radius: 5%;
+          border-left: 5px solid darkgray;
+          transition: ease-out .3s; }
+
+main {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+  width: 79%;
+  background-color: white;
+  border-radius: 5px;
+  -webkit-box-shadow: 1px 1px 9px 5px rgba(0, 0, 0, 0.5);
+  box-shadow: 1px 1px 9px 5px rgba(0, 0, 0, 0.5); }
+  main h1 {
+    color: pink; }
+
+div#wt-sky-root {
+  display: none; }
