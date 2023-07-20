@@ -78,6 +78,7 @@ header {
         font-weight: 500;
 
         &:hover {
+          cursor: pointer;
           background-color: pink;
           border-radius: 5%;
           border-left: 5px solid darkgray;
@@ -88,20 +89,169 @@ header {
   }
 }
 
-// main
-main {
-  @include display-flex(center, center, row);
+// home main
+main.home {
+  @include display-flex(center, space-around, column);
   height: 100%;
   width: 79%;
-  background-color: white;
+  background-color: #e3e2e2;
   border-radius: 5px;
   -webkit-box-shadow: $shadow-webkit;
   box-shadow: $shadow;
 
-  h1 {
-    color: pink;
+  // expense header
+  .expense_header {
+    @include display-flex(center, center, row);
+    width: 100%;
+
+    div {
+      @include display-flex(center, space-around, column);
+      background-color: white;
+      border-radius: 5%;
+      margin: 5%;
+      width: 20%;
+      -webkit-box-shadow: 1px 1px 9px 5px rgba(255,255,255,0.5);
+      box-shadow: 1px 1px 9px 5px rgba(255,255,255,0.5);
+    }
+  }
+
+  .expense_block {
+    @include display-flex(center, space-between, row);
+    width: 100%;
+    margin: 1%;
+    height: 55%;
+
+    .expense_form {
+      @include display-flex(center, center, column);
+      background-color: white;
+      height: 100%;
+      width: 35%;
+      margin: 0 1%;
+      border-radius: 5px;
+      -webkit-box-shadow: 1px 1px 9px 5px rgba(255,255,255,0.5);
+      box-shadow: 1px 1px 9px 5px rgba(255,255,255,0.5);
+
+      label#amount_spent {
+        @include display-flex(center, flex-start, column);
+        width: 100%;
+        font-size: 20px;
+        margin: 5%;
+        input {
+          border: none;
+          outline: none;
+          border-radius: 5px;
+          background-color: lightyellow;
+          width: 70%;
+          padding: 2% 1%;
+          font-size: 18px;
+          box-shadow: $shadow;
+          -webkit-box-shadow: $shadow-webkit;
+        }
+      }
+
+      label.expense_type {
+        margin: 5%;
+        @include display-flex(center, flex-start, column);
+        width: 100%;
+        font-size: 20px;
+        select {
+          border: none;
+          outline: none;
+          border-radius: 5px;
+          background-color: lightyellow;
+          width: 72%;
+          padding: 2% 1%;
+          font-size: 18px;
+          box-shadow: $shadow;
+          -webkit-box-shadow: $shadow-webkit;
+        }
+      }
+
+      .button {
+        margin: 5%;
+        width: 25%;
+        background-color: dodgerblue;
+        color: white;
+        border: none;
+        border-radius: 5px;
+        height: 10%;
+        font-size: 18px;
+      }
+
+    }
+  }
+
+  .expense_analytics {
+    @include display-flex(center, center, column);
+    background-color: white;
+    height: 100%;
+    width: 60%;
+    margin: 0 1%;
+    border-radius: 5px;
+    -webkit-box-shadow: 1px 1px 9px 5px rgba(255,255,255,0.5);
+    box-shadow: 1px 1px 9px 5px rgba(255,255,255,0.5);
+  }
+
+}
+
+// Settings
+main.settings {
+  @include display-flex(center, space-around, column);
+  height: 100%;
+  width: 79%;
+  background-color: #e3e2e2;
+  border-radius: 5px;
+  -webkit-box-shadow: $shadow-webkit;
+  box-shadow: $shadow;
+
+  .total_amount_settings_block {
+    @include display-flex(center, center, column);
+    width: 100%;
+    height: 50%;
+
+    .settings_form {
+      @include display-flex(center, center, column);
+      background-color: white;
+      height: 100%;
+      width: 35%;
+      margin: 0 1%;
+      border-radius: 5px;
+      -webkit-box-shadow: 1px 1px 9px 5px rgba(255,255,255,0.5);
+      box-shadow: 1px 1px 9px 5px rgba(255,255,255,0.5);
+
+      label {
+        @include display-flex(center, flex-start, column);
+        width: 100%;
+        font-size: 18px;
+        margin: 5%;
+        input {
+          border: none;
+          outline: none;
+          border-radius: 5px;
+          background-color: lightyellow;
+          width: 70%;
+          padding: 2% 1%;
+          font-size: 18px;
+          box-shadow: $shadow;
+          -webkit-box-shadow: $shadow-webkit;
+        }
+      }
+
+      .button {
+        margin: 5%;
+        width: 25%;
+        background-color: dodgerblue;
+        color: white;
+        border: none;
+        border-radius: 5px;
+        height: 10%;
+        font-size: 18px;
+      }
+    }
+
   }
 }
+
 
 div#wt-sky-root {
   display: none;

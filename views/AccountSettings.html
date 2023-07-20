@@ -3,6 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <title>Account Settings</title>
+    <script defer src="../app.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
     <link rel="stylesheet" href="../css/main.css"/>
     <link rel="stylesheet" href="//use.fontawesome.com/releases/v5.10.2/css/all.css">
 </head>
@@ -13,7 +15,7 @@
     </section>
     <section class="user_main_info">
         <i class="fas fa-user-alt"></i>
-        <h3 class="user_name">John Smith</h3>
+        <h3 class="user_name"></h3>
     </section>
     <section class="navigation">
         <nav>
@@ -22,8 +24,24 @@
         </nav>
     </section>
 </header>
-<main>
-    <h1>Account Settings</h1>
+<main class="settings">
+    <section class="total_amount_settings_block">
+        <form name="settings_form" action="" class="settings_form" method="post" enctype="multipart/form-data">
+            <label for="user_name" id="user_name">
+                <input type="text" name="user_name" class="user_name" placeholder="Name & Surname">
+            </label>
+            <label for="total_amount_settings" id="total_amount_settings">
+                <input type="text" name="total_amount_settings" class="total_amount_settings" placeholder="$ 0.00">
+            </label>
+            <button type="submit" name="total_amount_submit" class="button" id="total_amount_settings_submit">Submit</button>
+        </form>
+    </section>
 </main>
+<script>
+  const username = document.querySelector(".user_name") || ""
+
+  const name = localStorage.getItem('username');
+  username.innerHTML = name ? name : "Name Surname"
+</script>
 </body>
 </html>

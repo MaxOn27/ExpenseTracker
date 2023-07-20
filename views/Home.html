@@ -3,7 +3,10 @@
 <head>
     <meta charset="UTF-8">
     <title>Expense Tracker</title>
-    <script defer src="../script.js"></script>
+    <script defer src="../app.js"></script>
+    <script defer src="../js/chart.js"></script>
+
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
     <link rel="stylesheet" href="../css/main.css"/>
     <link rel="stylesheet" href="//use.fontawesome.com/releases/v5.10.2/css/all.css">
 </head>
@@ -14,7 +17,7 @@
     </section>
     <section class="user_main_info">
         <i class="fas fa-user-alt"></i>
-        <h3 class="user_name">John Smith</h3>
+        <h3 class="user_name"></h3>
     </section>
     <section class="navigation">
         <nav>
@@ -23,8 +26,46 @@
         </nav>
     </section>
 </header>
-<main>
-    <h1>Hello World!</h1>
+<main class="home">
+    <section class="expense_header">
+        <div id="total_income_block">
+            <h3>Total Income</h3>
+            <h2 class="total_income"></h2>
+        </div>
+        <div id="total_expenses_block">
+            <h3>Total Expenses</h3>
+            <h2 class="total_expenses"></h2>
+        </div>
+        <div id="total_balance_block">
+            <h3>Total Balance</h3>
+            <h2 class="total_balance"></h2>
+        </div>
+    </section>
+    <section class="expense_block">
+        <form name="expense_form" action="" class="expense_form" method="post" enctype="multipart/form-data">
+            <label for="amount_spent" id="amount_spent">
+                <input type="text" name="amount_spent" class="amount_spent" placeholder="$ 0.00">
+            </label>
+            <label for="expense_option" class="expense_type">
+                <select name="expense_option" id="expense_option">
+                    <option value="1" disabled selected>Choose option</option>
+                    <option value="Food">Food</option>
+                    <option value="Medicine">Medicine</option>
+                    <option value="Entertainments">Entertainments</option>
+                </select>
+            </label>
+            <button id="expenses_submit" type="submit" name="expenses_submit" class="button">Submit</button>
+        </form>
+        <div class="expense_analytics">
+            <canvas id="myChart" width="400" height="400"></canvas>
+        </div>
+    </section>
 </main>
+<script>
+  const username = document.querySelector(".user_name") || ""
+
+  const name = localStorage.getItem('username');
+  username.innerHTML = name ? name : "Name Surname"
+</script>
 </body>
 </html>

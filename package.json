@@ -1,8 +1,10 @@
 {
+  "type": "module",
   "scripts": {
     "watch:scss": "node-sass -w css/main.scss css/main.css"
   },
   "dependencies": {
+    "chart.js": "^4.3.0",
     "node-sass": "^9.0.0"
   }
 }
